@@ -9,3 +9,54 @@ jenkins:
       permissions:
         - "Overall/Administer:panda"
   numExecutors: 0
+
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - basicSSHUserPrivateKey:
+          id: "jenkins_agent"
+          username: "jenkins"
+          privateKeySource:
+            directEntry:
+              privateKey:
+                -----BEGIN OPENSSH PRIVATE KEY-----
+                b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+                NhAAAAAwEAAQAAAYEA2wOiP3zsr5kHpM34ws7Q5YpMm6l5/NuSVc+JOtUpBVD+mDC5ahz1
+                0UVX4gMaB4ZWSJWrnc1G5YaMEedxGyS4BOgrdHXymq9uy39c7Z4sqA5nyoyqWHaffZ9Qc3
+                AzE0cQN0gkCZ5bxdoG8XO7HRmkz13lA7wK8J6gLLz88aPikFvFaytPm8lnFRecoVza34vM
+                Xm2NtANjj1q21h4wqEMp8jJlkKtEya4Mk7mgsZCU5gxQCqCvt4CYXp7A/1mH2scaj9DESA
+                0YexGgb9aUyXDKSy+0gyhaGFjxdHYBB9w25HZwJnTnBXGLXfwbSa/ahnAgCzbgVYq4fAiy
+                dxH6T4U3B7F24sCjNC0iTFd4zqg3AzLy/PI3wuSFSKPMHJr7mfim79d4CUOxz5B9uPow1n
+                zeN5HN1KSrzlgcQU15Mqm5YRcuO+v4gN9NBflLzovEgYCr4slukI/nPQbgksMPpf3xaw91
+                rO2seDU0x7Fesc2hyQJzLHLcLTBSdvVZHAoeeP0/AAAFiBa+RpYWvkaWAAAAB3NzaC1yc2
+                EAAAGBANsDoj987K+ZB6TN+MLO0OWKTJupefzbklXPiTrVKQVQ/pgwuWoc9dFFV+IDGgeG
+                VkiVq53NRuWGjBHncRskuAToK3R18pqvbst/XO2eLKgOZ8qMqlh2n32fUHNwMxNHEDdIJA
+                meW8XaBvFzux0ZpM9d5QO8CvCeoCy8/PGj4pBbxWsrT5vJZxUXnKFc2t+LzF5tjbQDY49a
+                ttYeMKhDKfIyZZCrRMmuDJO5oLGQlOYMUAqgr7eAmF6ewP9Zh9rHGo/QxEgNGHsRoG/WlM
+                lwyksvtIMoWhhY8XR2AQfcNuR2cCZ05wVxi138G0mv2oZwIAs24FWKuHwIsncR+k+FNwex
+                duLAozQtIkxXeM6oNwMy8vzyN8LkhUijzBya+5n4pu/XeAlDsc+Qfbj6MNZ83jeRzdSkq8
+                5YHEFNeTKpuWEXLjvr+IDfTQX5S86LxIGAq+LJbpCP5z0G4JLDD6X98WsPdaztrHg1NMex
+                XrHNockCcyxy3C0wUnb1WRwKHnj9PwAAAAMBAAEAAAGAZgQwTEBlg3nVvKeQqzVoyrL78j
+                okL2sbo8rzEit+WxKaNMvlYg8xVZRmVkm5ky24/UByWyPmVT2x+xkCb3FQIkD/FNVn9zOm
+                eTXPVIOsK2/iWs/g/SnsKrjN4aeustkULZv15WEVQHjJaSjOTMTIJyuGZJHvypso4w35CJ
+                mdDD8jG0NmZpuO351LAULeVOiqfoWrTuGRO5I2vk/7vDTk0gM1mgidFxBynVEHEA7XvLyZ
+                gAnPL7u/vbtXDNpoVLkOwkAqEZJJ6R/RLk7KovvqAfv2imc5ZqTNK/2mLN3oi6xG1iTdpv
+                i1HBMxew8h0I7dxnKofAZS2aVzJsgDiXghYSOFLFlUB9IpgTnTew5vtCo9YrXGl0pkAfNX
+                w9eWwF9n4tIw4x3qlNpalDuh2Y/G+8t1o88fG61RL/xuLUOKJlgUGsElqMXnugkfhtVVKo
+                38OXHNEjHkWi+lleElGHhh5jYx2W1Xgptw5mkqFKbPKy9A/n66FfyIj07IhmrS3DsJAAAA
+                wQCuySH14UeuAT4ZptXfE513XkZDa0HvPQtoz8+6wQDxPd4VfDN3Y5rl0HZZTPl9V+OZ0f
+                ZM9CFJmtonF2CvebOKhbsCfCsBwkgf9Oo8Sg+r0zY6mujiUrXmPxLnYOEa33LHvRBIZJ3L
+                mnElTpOKYjsrz0P6jeAkFwkxrUfeK+K8lvUjNcxNxNBVcrXaHE4e/2u2QIhqq6nUE1ffMi
+                zZ4ze6BoYoPIc6kad0w4n6ySqbZc02oaV13JclgWYvuLgiy1kAAADBAP0Q8jvzufLRQHRW
+                ae33KOZmwaq53JB3VuwJOkwrJw/wz4/1jdlvp58JjHDjEE7EqU5QEsH2Z7KnW079YjPWC0
+                ewoSQPMT4tH3uI9J/BUP+5DG/vnbHSwjQ1QcAx2eRJEDr9TYL7d4AEtc2yE13MyTzvdJXL
+                Gxs6PO9HvNVv6bX0cJSmpmZOqF5sAJ9Rt1EXqSSMT8UrSzor8yZPJB7Fw9Y2aaqRYd0w+V
+                t4S3duPVobkUaHx5zO/oSwwzbykdOK7QAAAMEA3Y2go5kRSP99X9bwIcU/S34zGrvCwiu4
+                iAyNwRVJv12UbLQ7diuZ28atfL3SacdnOsFcKqe0gUqf2l/MHTrmZ10nbQJVYVB2ty9Er2
+                1AvslphipzHPGzJL1ayz7nMUCoAUGvgegCVgMeZi93yYg8Q0MDQMWzDxL/L0psn8NL6IlF
+                3nC3A25/37kFpeG4ud9fcmuoixS4OJfB4Qd0mdUYGZBujnbRIm0NmCpHLlKlpr2nvkE3de
+                rHUGxaem+IfqdbAAAADXBhbmRhQHZhZ3JhbnQBAgMEBQ==
+                -----END OPENSSH PRIVATE KEY-----
+                
+          scope: GLOBAL
