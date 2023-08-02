@@ -15,6 +15,7 @@ services:
       interval: 5s
       timeout: 10s
       retries: 30
+
   jenkins:
     depends_on:
       artifactory:
@@ -30,7 +31,7 @@ services:
 
   jenkins_agent:
     depends_on:
-      jenkins
+      - jenkins
     container_name: jenkins_agent
     build: ./jenkins_agent
     volumes:
@@ -38,13 +39,36 @@ services:
     ports:
       - "2222:22"
     environment:
-      - JENKINS_AGENT_SSH_PUBKEY: "${PUBKEY}"
+      - JENKINS_AGENT_SSH_PUBKEY=${PUBKEY}
     restart: always
 
+  sonarqube:
+    depends_on:
+      - jenkins
+    image: sonarqube:9.2.4-community
+    container_name: sonarqube
+    ports:
+      - "9000:9000"
+    restart: always
 
-healthcheck:
-  test: ["CMD", "curl", "-f", "http://localhost"]
-  interval: 1m30s
-  timeout: 10s
-  retries: 3
-  start_period: 40s
+  selenium_hub:
+    depends_on:
+      - jenkins
+    image: selenium/hub
+    container_name: selenium_hub
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"
+    restart: always 
+
+  firefox:
+    image: selenium/node-firefox
+    container_name: firefox
+    depends_on:
+      - selenium_hub
+    environment:
+      - SE_EVENT_BUS_HOST=selenium_hub
+      - SE_EVENT_BUS_PUBLISH_PORT=4442
+      - SE_EVENT_BUS_SUBSCRIBE_PORT=4443
+    restart: always
