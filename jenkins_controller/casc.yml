@@ -32,7 +32,7 @@ credentials:
           privateKeySource:
             directEntry:
               privateKey:
-                -----BEGIN RSA PRIVATE KEY-----
+               -----BEGIN RSA PRIVATE KEY-----
                 MIIEpAIBAAKCAQEAmicV5fguBrJiHK7F0Ppqkv7fUjbBa7Y+S333Zza/PvWuNFFB
                 w19ZintulPKEmqwnIi2BLV1rFrZdVZkEuiQHVSOb2SktidDbeqHvgB/ctj4S+sLa
                 lLHpdmiR1JPMNdw35LfsOrWQUMQrswQ71kbeobKa1bib1qCAjGWp1TqF2/gXycfd
