@@ -2,14 +2,13 @@ jenkins:
   securityRealm:
     local:
       users:
-      - id: "panda"
-        password: "panda"
+       - id: "panda"
+         password: "panda"
   authorizationStrategy:
     globalMatrix:
       permissions:
         - "Overall/Administer:panda"
   numExecutors: 0
-
   nodes:
   - permanent:
       labelString: "agent"
@@ -26,13 +25,18 @@ credentials:
   system:
     domainCredentials:
     - credentials:
+      - usernamePassword:
+          id: "artifactory"
+          username: "admin"
+          password: "password"
+          scope: GLOBAL
       - basicSSHUserPrivateKey:
           id: "jenkins_agent"
           username: "jenkins"
           privateKeySource:
             directEntry:
-              privateKey:
-               -----BEGIN RSA PRIVATE KEY-----
+              privateKey: |
+                -----BEGIN RSA PRIVATE KEY-----
                 MIIEpAIBAAKCAQEAmicV5fguBrJiHK7F0Ppqkv7fUjbBa7Y+S333Zza/PvWuNFFB
                 w19ZintulPKEmqwnIi2BLV1rFrZdVZkEuiQHVSOb2SktidDbeqHvgB/ctj4S+sLa
                 lLHpdmiR1JPMNdw35LfsOrWQUMQrswQ71kbeobKa1bib1qCAjGWp1TqF2/gXycfd
@@ -59,9 +63,7 @@ credentials:
                 vHoVFMY0B2SYTiTNEa4Pe8rv+zaXliYVZoq2P/XbEK4qoWl2QpWxTSz4cYHUoiZN
                 o1epS4clbUspxKat9tbIIRccKa9GWXVDNLih8TslLCBoL/knJc+aqw==
                 -----END RSA PRIVATE KEY-----
-                
           scope: GLOBAL
-
 tool:
   sonarRunnerInstallation:
     installations:
@@ -73,6 +75,8 @@ tool:
               id: "4.7.0.2747"
 
 unclassified:
+  location:
+    url: "http://192.168.44.44:8880/"
   sonarGlobalConfiguration:
     buildWrapperEnabled: true
     installations:
@@ -80,4 +84,4 @@ unclassified:
       serverUrl: "http://192.168.44.44:9000"
       triggers:
         skipScmCause: false
-        skipUpstreamCause: false          
+        skipUpstreamCause: false
